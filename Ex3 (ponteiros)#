@@ -1,0 +1,83 @@
+/******************************************************************************
+
+3 Faça um método que peça 2 (dois) números inteiros, e mostre no vídeo todos os
+números ímpares entre eles (incluindo-os). Os dois valores podem ser informados 
+em qualquer ordem, devendo o programa trata-los de forma adequada.
+Obs. Os parâmetros do método deve ser dois ponteiros de inteiros. Manipule-os 
+corretamente dentro do método.
+
+
+*******************************************************************************/
+
+#include <iostream>
+using namespace std;
+
+int nums(int *p1, int *p2);
+int classificacaoImpar( int *p1, int *p2);
+
+int main()
+{ 
+    int num1;
+    int num2;
+    
+   nums(&num1, &num2);
+   classificacaoImpar(&num1, &num2);
+   
+    return 0;
+}
+ //método que pega os número do usuário
+int nums(int *p1, int *p2){
+    cout << "Insira dois numeros inteiros(primeiro): ";
+    cin >> *p1;
+    cout << "Insira dois numeros inteiros(segundo):";
+    cin>> *p2;
+    
+    
+    
+    return 0; 
+}
+//método que cria um array e depois separa os impares dos pares
+int classificacaoImpar(int *p1, int *p2){
+    
+    int i = 1;
+    int casaReal; //numero que vai ser usado para mudar a casa do vetor 
+    int num = *p1; //numero que está na vez de ser verificado
+int sequencia[casaReal]; 
+
+    for(i; i<*p2; i++){
+        if(num != *p2){
+            casaReal = i-1;
+         sequencia[casaReal] = *p1 + 1; 
+         num++;
+        }
+        else if(num == *p2){
+            break;
+        }
+        else{
+            cout<<"Algo deu errado";
+        }
+        
+    }
+    
+    int numCasaReal = 1;
+    int sequenciaImp[numCasaReal];
+    
+    for (int j = 0; j<sequencia[numCasaReal]; j++){
+        if(sequencia[j] %2 != 0){
+            //é impar
+            sequenciaImp[j] = sequencia[j];
+            numCasaReal++;
+        }
+        else {
+            cout << "Algo deu errado (parte 2)";
+            
+        }
+        
+    }
+       cout <<"Numeros impares da sequencia: \n";
+    for(int j=0; j<numCasaReal; j++){
+            cout<< sequenciaImp[j] <<"\n";
+        }
+        return 0;
+}
+
